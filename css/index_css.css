@@ -1,0 +1,30 @@
+.intro {
+
+    height: auto;
+    padding: 100px 0;
+	padding-top: 100px;
+    text-align: center;
+    color: #fff;
+
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover
+
+}
+
+body{
+    background: url(../imagens/imagem_fundo.jpg) no-repeat bottom center scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+
+.btn-primary{
+    background-color: #222;
+    border-color: #222;
+    border-radius: 0;
+}

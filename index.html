@@ -2,6 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/index_css.css">
     <meta charset="UTF-8">
 
     <title>Gerenciador de Inconformidades</title>
@@ -24,20 +25,54 @@
       				</li>
       				<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Ações </a></li>
       				<li><a href="#"><span class="glyphicon glyphicon-duplicate"></span> Relatórios </a></li>
+
+
     			</ul>
+    			<ul class="nav navbar-nav navbar-right">
+     					 <li><button type="button" href="min-btn"><span class="glyphicon glyphicon-minus"></span></a></li>
+     					 <li><button type="button" href="max-btn"><span class="glyphicon glyphicon-unchecked"></span></a></li>
+      					<li><button type="button" href="close-btn"><span class="glyphicon glyphicon-remove"></span></a></li>
+    				</ul>
   			</div>
 		</nav>
 
+        <div class="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">SISGIU</h1>
+                        <p class="intro-text">Facilitando a ordem e o progresso</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-	<h1>SISGIU</h1>
 
-
-   <script src="js/jquery-2.2.2.min.js"></script>
+   <script src="js/jquery-2.2.4.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script>
+   var remote = require('remote');
+
+   document.getElementById("min-btn").addEventListener("click", function (e) {
+        var window = remote.getCurrentWindow();
+        window.minimize();
+   });
+
+   document.getElementById("max-btn").addEventListener("click", function (e) {
+        var window = remote.getCurrentWindow();
+        window.maximize();
+   });
+
+   document.getElementById("close-btn").addEventListener("click", function (e) {
+        var window = remote.getCurrentWindow();
+        window.close();
+   });
+   </script>
   </body>
 
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
+  <script src="js/index.js"></script>
 </html>
