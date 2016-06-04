@@ -29,9 +29,9 @@
 
     			</ul>
     			<ul class="nav navbar-nav navbar-right">
-     					 <li><button type="button" href="min-btn"><span class="glyphicon glyphicon-minus"></span></a></li>
-     					 <li><button type="button" href="max-btn"><span class="glyphicon glyphicon-unchecked"></span></a></li>
-      					<li><button type="button" href="close-btn"><span class="glyphicon glyphicon-remove"></span></a></li>
+     					 <li><button type="button" id ="min-btn"><span class="glyphicon glyphicon-minus"></span></li>
+     					 <li><button type="button" id ="max-btn"><span class="glyphicon glyphicon-unchecked"></span></li>
+      				 <li><button type="button" id ="close-btn"><span class="glyphicon glyphicon-remove"></span></li>
     				</ul>
   			</div>
 		</nav>
@@ -50,24 +50,6 @@
 
    <script src="js/jquery-2.2.4.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
-   <script>
-   var remote = require('remote');
-
-   document.getElementById("min-btn").addEventListener("click", function (e) {
-        var window = remote.getCurrentWindow();
-        window.minimize();
-   });
-
-   document.getElementById("max-btn").addEventListener("click", function (e) {
-        var window = remote.getCurrentWindow();
-        window.maximize();
-   });
-
-   document.getElementById("close-btn").addEventListener("click", function (e) {
-        var window = remote.getCurrentWindow();
-        window.close();
-   });
-   </script>
   </body>
 
   <script>
