@@ -5,13 +5,17 @@
 	padding-top: 100px;
     text-align: center;
     color: #fff;
-
+ 
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover
+	
+}
 
+.btn-close:hover{
+    background-color:red;
 }
 
 body{
@@ -19,6 +23,8 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    position: absolute;
+    width: 100%;
 }
 
 
@@ -28,3 +34,73 @@ body{
     border-color: #222;
     border-radius: 0;
 }
+
+.jumbotron{
+    text-align: center;
+    background-color: transparent;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+}
+
+.jumbotron h1{
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    color: white;
+    font-size: 200px;   
+}
+
+.jumbotron p{
+    font-family: Gabriola,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.dropdown-menu button{
+    border: 0px;
+    background-color: white;
+}
+
+.dropdown-menu button:hover{
+    border: 1px;
+}
+
+.modal-body input{
+    border-radius: 5px;
+}
+
+.modal-body p{
+    font-size: 40px;
+    font-family: Gabriola,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+
+}
+
+.modal-header h4{
+    font-size: 350%;
+    font-family: Gabriola,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    font-weight: bold;
+}
+
+.modal-footer button{
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: all .4s ease-in-out;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    transition-delay: initial;
+}
+
+.btn-success:hover, .btn-success:focus {
+    border: 3px solid rgb(51, 204, 255);
+    outline: 0;
+    color: white;
+    background-color: rgb(51, 204, 255);
+}
+
+.btn-success{
+    border: 3px solid rgb(51, 204, 255);
+    color: rgb(51, 204, 255);
+    background-color: transparent;
+}
+
+
+

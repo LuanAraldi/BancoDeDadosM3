@@ -11,50 +11,139 @@
 		<nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 		    <div class="navbar-header">
-      			<a class="navbar-brand" href="#">-- TUS --</a>
+      			<a class="navbar-brand" href="#"><span class="glyphicon glyphicon-fire"></span> TUS <span class="glyphicon glyphicon-fire"></span></a>
     		</div>
     	<ul class="nav navbar-nav">
-      		<li class="active"><a href="#">Principal</a></li>
       		<li class="dropdown">
         		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-save"></span> Cadastros
         		<span class="caret"></span></a>
         		<ul class="dropdown-menu">
-          			<li><a href="#">Inconformidades</a></li>
-          			<li><a href="#">Categorias</a></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-inconformidade">Inconformidades</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-categoria">Categorias</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-acao">Ações</button></li>
         		</ul>
-      				</li>
-      				<li><a href="#"><span class="glyphicon glyphicon-wrench"></span> Ações </a></li>
-      				<li><a href="#"><span class="glyphicon glyphicon-duplicate"></span> Relatórios </a></li>
+      		</li>
 
-
-    			</ul>
+      		<li class="dropdown">
+        		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-duplicate"></span> Relatórios
+        		<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-gostos-mes">Gastos por Mês</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-gastos-categoria">Gastos por Categoria</button></li>
+        		</ul>
+      		</li>
+    	</ul>
     			<ul class="nav navbar-nav navbar-right">
-     					 <li><button type="button" id ="min-btn"><span class="glyphicon glyphicon-minus"></span></li>
-     					 <li><button type="button" id ="max-btn"><span class="glyphicon glyphicon-unchecked"></span></li>
-      				 <li><button type="button" id ="close-btn"><span class="glyphicon glyphicon-remove"></span></li>
+     					 <li><button class="btn btn-primary btn-lg "type="button" id="min-btn"><span class="glyphicon glyphicon-minus"></span></a></li>
+     					 <li><button class="btn btn-primary btn-lg"type="button" id="max-btn"><span class="glyphicon glyphicon-unchecked"></span></a></li>
+      					<li><button class="btn btn-primary btn-lg btn-close"type="button" id="close-btn" ><span class="glyphicon glyphicon-remove">
+      					</span></a></li>
     				</ul>
   			</div>
 		</nav>
 
-        <div class="intro">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">SISGIU</h1>
-                        <p class="intro-text">Facilitando a ordem e o progresso</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+<div class="modal fade" id="modal-inconformidade" role="dialog">
+    <div class="modal-dialog">
+		<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title">Cadastro de Inconformidade</h4>
+        		</div>
+        	<div class="modal-body">
+           		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da inconformidade..."></textarea><br>
+           		<p>Categoria da Inconformidade</p>
+                <select  class="form-control">
+                	<option>Seria legal</option>
+					<option>Por Aqui</option>
+					<option>As opções</option>
+					<option>que tiver</option>
+					<option>cadastradas no banco</option>
+				</select><br>
+                <label><input type="date"> Data</label>
+
+        	</div>
+        	<div class="modal-footer">
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="mensagemSucesso()">Salvar</button>
+        	</div>
+      	</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-categoria" role="dialog">
+    <div class="modal-dialog">
+		<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title">Cadastro de Categoria</h4>
+        		</div>
+        	<div class="modal-body">
+           		<input type="text" class="form-control" placeholder="Nome da Categoria">
+        	</div>
+        	<div class="modal-footer">
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="mensagemSucesso()">Salvar</button>
+        	</div>
+      	</div>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-acao" role="dialog">
+    <div class="modal-dialog">
+		<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title">Cadastro de Ações</h4>
+        		</div>
+        	<div class="modal-body">
+           		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da Ação..."></textarea><br>
+           		<p>Categoria da Inconformidade</p>
+                <select  class="form-control">
+                	<option>Seria legal</option>
+					<option>Por Aqui</option>
+					<option>As opções</option>
+					<option>que tiver</option>
+					<option>cadastradas no banco</option>
+				</select><br>
+                <label><input type="date"> Data</label><br>
+
+            <p>Inconformidade foi resolvida?</p>
+            <div class="radio">
+               <label>
+				    <input type="radio" name="optionsRadios" id="opcaoRadio1" value="opcao1" checked>
+				    Sim
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+			    	<input type="radio" name="optionsRadios" id="opcaoRadio2" value="opcao2">
+			    	Nao
+				</label>
+			</div>
+
+        	<div class="modal-footer">
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="mensagemSucesso()">Salvar</button>
+        	</div>
+        	</div>
+      	</div>
+	</div>
+</div>
+            <div class="container titulo">
+               <div class="jumbotron">
+   					<h1>SISGIU</h1><br>
+    					<p>facilitando a ordem e o progresso</p>
+  				</div>
+
+           	</div>
 
 
-   <script src="js/jquery-2.2.4.min.js"></script>
+   <script src="js/jquery-2.2.2.min.js"></script>
    <script src="js/bootstrap.min.js"></script>
+   <script src="js/index_jss.js"></script>
+   <script src="js/index.js"></script>
   </body>
 
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
-  <script src="js/index.js"></script>
 </html>
