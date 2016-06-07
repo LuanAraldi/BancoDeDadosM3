@@ -6,4 +6,5 @@ client.connect(function(err){
   if(err){
     alert("Problemas com o banco de dados!")
   }
+  pg.query("")
 })
