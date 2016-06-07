@@ -5,13 +5,13 @@
 	padding-top: 100px;
     text-align: center;
     color: #fff;
- 
+
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover
-	
+
 }
 
 .btn-close:hover{
@@ -25,6 +25,7 @@ body{
     background-attachment: fixed;
     position: absolute;
     width: 100%;
+    overflow: hidden;
 }
 
 
@@ -38,13 +39,13 @@ body{
 .jumbotron{
     text-align: center;
     background-color: transparent;
-    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
 }
 
 .jumbotron h1{
     font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
     color: white;
-    font-size: 200px;   
+    font-size: 200px;
 }
 
 .jumbotron p{
@@ -69,7 +70,7 @@ body{
 
 .modal-body p{
     font-size: 40px;
-    font-family: Gabriola,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif; 
+    font-family: Gabriola,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
 
 }
 
@@ -101,6 +102,3 @@ body{
     color: rgb(51, 204, 255);
     background-color: transparent;
 }
-
-
-
