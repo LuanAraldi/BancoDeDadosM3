@@ -14,11 +14,11 @@
            if(window.isMaximized()){
              window.unmaximize();
               document.getElementById("max-btn").setAttribute("class","btn btn-primary btn-lg glyphicon glyphicon-unchecked");
-              window.blur();
+              document.getElementById("max-btn").blur();
            }else{
              window.maximize();
              document.getElementById("max-btn").setAttribute("class","btn btn-primary btn-lg glyphicon glyphicon-resize-small");
-             window.blur();
+             document.getElementById("max-btn").blur();
            }
       });
 

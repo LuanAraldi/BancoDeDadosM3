@@ -1,8 +1,7 @@
 .intro {
-
     height: auto;
     padding: 100px 0;
-	padding-top: 100px;
+	  padding-top: 100px;
     text-align: center;
     color: #fff;
 
@@ -27,8 +26,6 @@ body{
     width: 100%;
     overflow: hidden;
 }
-
-
 
 .btn-primary{
     background-color: #222;
@@ -101,4 +98,8 @@ body{
     border: 3px solid rgb(51, 204, 255);
     color: rgb(51, 204, 255);
     background-color: transparent;
+}
+
+.btn:active:focus{
+  outline: none;
 }
