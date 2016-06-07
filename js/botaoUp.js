@@ -11,7 +11,15 @@
 
       document.getElementById("max-btn").addEventListener("click", function (e) {
            var window = BrowserWindow.getFocusedWindow();
-           window.maximize();
+           if(window.isMaximized()){
+             window.unmaximize();
+              document.getElementById("max-btn").setAttribute("class","btn btn-primary btn-lg glyphicon glyphicon-unchecked");
+              window.blur();
+           }else{
+             window.maximize();
+             document.getElementById("max-btn").setAttribute("class","btn btn-primary btn-lg glyphicon glyphicon-resize-small");
+             window.blur();
+           }
       });
 
       document.getElementById("close-btn").addEventListener("click", function (e) {
