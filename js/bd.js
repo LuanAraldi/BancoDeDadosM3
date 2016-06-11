@@ -11,7 +11,7 @@ function addBanco(tabela, valores){
     var query = "INSERT INTO " + tabela.trim() + " VALUES(";
     alert(valores.length);
     for( i = 0; i < valores.length; i++){
-      if(typeof valores[i] == "string" && valores[i] != "DEFAULT"){
+      if(typeof valores[i] == "string" && valores[i] != "DEFAULT" && valores[i] != "NULL"){
         query += "'" + valores[i] + "'";
       }else{
         query += valores[i];
