@@ -50,17 +50,16 @@
           		<h4 class="modal-title">Cadastro de Inconformidade</h4>
         		</div>
         	<div class="modal-body">
-           		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da inconformidade..."></textarea><br>
+           		<textarea class="form-control" id="descInc" rows="6" placeholder="Descrição da inconformidade..."></textarea><br>
            		<p>Categoria da Inconformidade</p>
-                <select  class="form-control">
-                	<option>Seria legal</option>
-					<option>Por Aqui</option>
-					<option>As opções</option>
-					<option>que tiver</option>
-					<option>cadastradas no banco</option>
-				</select><br>
-                <label><input type="date"> Data</label>
-
+                <select  class="form-control" id="catInc">
+                	<option value="1">1</option>
+					        <option value="2">2</option>
+					        <option value="3">3</option>
+					        <option value="4">4</option>
+					        <option value="5">5</option>
+				        </select><br>
+                <label><input type="date" id="dataInc"> Data</label>
         	</div>
         	<div class="modal-footer">
           		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="mensagemSucesso()">Salvar</button>
@@ -80,7 +79,8 @@
            		<input type="text" class="form-control" placeholder="Nome da Categoria" id="nomeCat">
         	</div>
         	<div class="modal-footer">
-          		<button type="submit" class="btn btn-success" data-dismiss="modal" id="botaoSalvarCategoria">Salvar</button>
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" id="botaoSalvarCategoria"
+              onclick="adicionaCategoria()">Salvar</button>
         	</div>
       	</div>
 	</div>
@@ -94,7 +94,7 @@
           		<h4 class="modal-title">Cadastro de Ações</h4>
         		</div>
         	<div class="modal-body">
-           		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da Ação..."></textarea><br>
+           		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da Ação..." id="descAcao"></textarea><br>
            		<p>Categoria da Inconformidade</p>
                 <select  class="form-control">
                 	<option>Seria legal</option>
@@ -138,6 +138,7 @@
    <script src="js/essenciais/jquery-2.2.2.min.js"></script>
    <script src="js/essenciais/bootstrap.min.js"></script>
 
+   <script src="js/bd.js"></script>
    <script src="js/botoesModal.js"></script>
    <script src="js/index_jss.js"></script>
    <script src="js/botaoUp.js"></script>

@@ -1,8 +1,16 @@
-var valores[];
+var valores = new Array();
 
-function init() {
-  document.getElementById("botaoSalvarCategoria").addEventListener("click", function (e) {
-    valores.push(document.getElementById("nomeCat").value());
-    valores.push(1);
+function adicionaCategoria() {
+    valores.length = 0;
+    valores.push("DEFAULT");
+    valores.push(document.getElementById("nomeCat").value);
     addBanco("categoria",valores);
-  });
+  }
+
+function adicionaInconformidade(){
+
+}
+
+function adicionaAcao(){
+  
+}
