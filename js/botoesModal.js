@@ -21,4 +21,5 @@ function adicionaInconformidade(){
 function adicionaAcao(){
     valores.length = 0;
     valores.push("DEFAULT");
+    valores.push();
 }

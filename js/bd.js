@@ -31,13 +31,13 @@ function addBanco(tabela, valores){
   });
 };
 
-function selectBanco(tabela, colunaWhere, valorWhere){
+function selectBancoCombobox(tabela, colunaWhere, valorWhere, retorno){
   cliente.connect(function(err){
     if(err){
       alert("Problemas com o banco de dados!");
     }
     var query = "SELECT FROM " + tabela.trim();
-    if(colunaWhere.length > 0 AND valorWhere.length > 0){
+    if(colunaWhere.length > 0 && valorWhere.length > 0){
       query += " WHERE ";
       for( i = 0; i < colunaWhere.length; i++){
         if(i != (colunaWhere.length - 1)){
@@ -46,15 +46,19 @@ function selectBanco(tabela, colunaWhere, valorWhere){
         }else{
           query += colunaWhere + " = '" + valorWhere + "'";
           query += ";";
-        }
-      };
-      alert(query);
+        };
+       };
+     };
       cliente.query(query, function(err, result) {
-        if(err) {
-          return console.error('error running query', err);
-        }
-        cliente.end();
       });
-    }
+      var resultQuery = cliente.query(query);
+      resultQuery.on('row', function(row, result){
+        result.addRow(row);
+      });
+      resultQuery.on('end', function(result){
+        retorno = 5;
+        cliente.end();
+        return retorno;
+      });
   });
-}
+};
