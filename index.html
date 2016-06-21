@@ -52,7 +52,7 @@
         	<div class="modal-body">
            		<textarea class="form-control" id="descInc" rows="6" placeholder="Descrição da inconformidade..."></textarea><br>
            		<p>Categoria da Inconformidade</p>
-                <select name="comboInc" id="categoria">
+                <select  class="form-control" id="comboCategoria">
 				        </select>
                 <br>
                 <label><input type="date" id="dataInc"> Data</label>
@@ -92,13 +92,9 @@
         	<div class="modal-body">
            		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da Ação..." id="descAcao"></textarea><br>
            		<p>Categoria da Inconformidade</p>
-                <select  class="form-control">
-                	<option>Seria legal</option>
-					<option>Por Aqui</option>
-					<option>As opções</option>
-					<option>que tiver</option>
-					<option>cadastradas no banco</option>
-				</select><br>
+                <select class="form-control" id="comboAcoes">
+				        </select>
+                <br>
                 <label><input type="date"> Data</label><br>
 
             <p>Inconformidade foi resolvida?</p>

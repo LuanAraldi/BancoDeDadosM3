@@ -31,12 +31,17 @@ function addBanco(tabela, valores){
   });
 };
 
-function selectBancoCombobox(tabela, colunaWhere, valorWhere, retorno){
+function selectBancoCategoria(tabela, colunaWhere, valorWhere, idCampo){
+  var resultQuery;
+  var result;
+  var combo = document.getElementById("comboCategoria");
+  var combo2 = document.getElementById("comboAcoes");
+
   cliente.connect(function(err){
     if(err){
       alert("Problemas com o banco de dados!");
     }
-    var query = "SELECT FROM " + tabela.trim();
+    var query = "SELECT * FROM " + tabela.trim();
     if(colunaWhere.length > 0 && valorWhere.length > 0){
       query += " WHERE ";
       for( i = 0; i < colunaWhere.length; i++){
@@ -51,14 +56,22 @@ function selectBancoCombobox(tabela, colunaWhere, valorWhere, retorno){
      };
       cliente.query(query, function(err, result) {
       });
-      var resultQuery = cliente.query(query);
+      resultQuery = cliente.query(query);
       resultQuery.on('row', function(row, result){
         result.addRow(row);
       });
       resultQuery.on('end', function(result){
-        retorno = 5;
         cliente.end();
-        return retorno;
+        for(i = 0; i < result.rows.length; i++){
+          var combobox = document.createElement("option");
+          var combobox2 = document.createElement("option");
+          combobox.text = result.rows[i].nome;
+          combobox.value = result.rows[i].id;
+          combobox2.text = result.rows[i].nome;
+          combobox2.value = result.rows[i].id;
+          combo.add(combobox, null);
+          combo2.add(combobox2, null);
+        };
       });
   });
 };
