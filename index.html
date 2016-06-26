@@ -58,7 +58,7 @@
                 <label><input type="date" id="dataInc"> Data</label>
         	</div>
         	<div class="modal-footer">
-          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="adicionaInconformidade()">Salvar</button>
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="adicionaInc()">Salvar</button>
         	</div>
       	</div>
 	</div>
@@ -91,28 +91,31 @@
         		</div>
         	<div class="modal-body">
            		<textarea class="form-control" id="descricao" rows="6" placeholder="Descrição da Ação..." id="descAcao"></textarea><br>
-           		<p>Categoria da Inconformidade</p>
-                <select class="form-control" id="comboAcoes">
-				        </select>
-                <br>
-                <label><input type="date"> Data</label><br>
-
+              <p>Custo da Ação</p>
+              <input type="number" id="precoAcao" id="precoAcao">
+              <br>
+              <p>Data da Ação</p>
+              <label><input type="date" id="dataAcao"> Data</label><br>
+              <br>
+              <p>inconformidade</p>
+              <select  class="form-control" id="comboAcao">
+              </select>
             <p>Inconformidade foi resolvida?</p>
             <div class="radio">
                <label>
-				    <input type="radio" name="optionsRadios" id="opcaoRadio1" value="opcao1" checked>
+				    <input type="radio" name="optionsRadios" id="opcaoRadio1" value="true" checked>
 				    Sim
 				</label>
 			</div>
 			<div class="radio">
 				<label>
-			    	<input type="radio" name="optionsRadios" id="opcaoRadio2" value="opcao2">
+			    	<input type="radio" name="optionsRadios" id="opcaoRadio2" value="false">
 			    	Nao
 				</label>
 			</div>
 
         	<div class="modal-footer">
-          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="mensagemSucesso()">Salvar</button>
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="adicionaAcao()">Salvar</button>
         	</div>
         	</div>
       	</div>
@@ -129,16 +132,15 @@
    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
    <script src="js/essenciais/jquery-2.2.2.min.js"></script>
    <script src="js/essenciais/bootstrap.min.js"></script>
-   
-   <script src="bower_components/jspdf/dist/jspdf.min.js"></script>
-   <script src="bower_components/jspdf-autotable/jspdf.plugin.autotable.js"></script>
 
    <script src="js/bd.js"></script>
    <script src="js/botoesModal.js"></script>
    <script src="js/index_jss.js"></script>
    <script src="js/botaoUp.js"></script>
    <script src="js/centralizaModal.js"></script>
-   <script src="js/populaCombobox.js"></script>
+   <script src="js/populaComboboxCategoria.js"></script>
+   <script src="js/populaComboboxInc.js"></script>
+
 
    <script>if (window.module) module = window.module;</script>
   </body>

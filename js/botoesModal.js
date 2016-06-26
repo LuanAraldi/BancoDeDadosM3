@@ -7,13 +7,13 @@ function adicionaCategoria() {
     addBanco("categoria",valores);
   }
 
-function adicionaInconformidade(){
+function adicionaInc(){
     valores.length = 0;
     valores.push("DEFAULT");
     valores.push(document.getElementById("descInc").value);
     valores.push(document.getElementById("dataInc").value);
     valores.push("NULL");
-    valores.push(document.getElementById("catInc").value);
+    valores.push(document.getElementById("comboCategoria").value);
     valores.push("false");
     addBanco("inconformidade",valores);
 }
@@ -21,5 +21,14 @@ function adicionaInconformidade(){
 function adicionaAcao(){
     valores.length = 0;
     valores.push("DEFAULT");
-    valores.push();
+    valores.push(document.getElementById("comboAcao").value);
+    valores.push(document.getElementById("precoAcao").value);
+    valores.push(document.getElementById("descricao").value);
+    valores.push(document.getElementById("dataAcao").value);
+    addBanco("acao",valores);
+
+    if(document.getElementById("opcaoRadio1").checked){
+      var acao = document.getElementById("comboAcao").value;
+      finalizaInc(acao);
+    };
 }
