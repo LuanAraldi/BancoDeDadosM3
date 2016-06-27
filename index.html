@@ -28,8 +28,8 @@
         		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-duplicate"></span> Relatórios
         		<span class="caret"></span></a>
         		<ul class="dropdown-menu">
-					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-gostos-mes">Gastos por Mês</button></li>
-					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-gastos-categoria">Gastos por Categoria</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" onclick="relGastoMes()">Gastos por Mês</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" onclick="relGastoCat()">Gastos por Categoria</button></li>
         		</ul>
       		</li>
     	</ul>
@@ -132,6 +132,8 @@
    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
    <script src="js/essenciais/jquery-2.2.2.min.js"></script>
    <script src="js/essenciais/bootstrap.min.js"></script>
+   <script src="js/essenciais/jspdf.min.js"></script>
+   <script src="js/essenciais/jspdf.plugin.autotable.js"></script>
 
    <script src="js/bd.js"></script>
    <script src="js/botoesModal.js"></script>
@@ -140,7 +142,7 @@
    <script src="js/centralizaModal.js"></script>
    <script src="js/populaComboboxCategoria.js"></script>
    <script src="js/populaComboboxInc.js"></script>
-
+   <script src="js/reports.js"></script>
 
    <script>if (window.module) module = window.module;</script>
   </body>
