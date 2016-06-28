@@ -9,7 +9,6 @@ function addBanco(tabela, valores){
       alert("Problemas com o banco de dados!");
     }
     var query = "INSERT INTO " + tabela.trim() + " VALUES(";
-    alert(valores.length);
     for( i = 0; i < valores.length; i++){
       if(typeof valores[i] == "string" && valores[i] != "DEFAULT" && valores[i] != "NULL"){
         query += "'" + valores[i] + "'";
@@ -21,7 +20,6 @@ function addBanco(tabela, valores){
       }
     };
     query += ");";
-    alert(query);
     cliente.query(query, function(err, result) {
       if(err) {
         return console.error('error running query', err);
@@ -69,7 +67,7 @@ function populaComboboxInc(){
 
   cliente.connect(function(err){
     if(err){
-      alert("Deu erro na inconformidade");
+      alert("Problemas com o banco de dados");
     }
     var query = "SELECT * FROM inconformidade WHERE situacao = false";
 
@@ -94,7 +92,6 @@ function populaComboboxInc(){
 function finalizaInc(idInc){
   var cliente = new pg.Client(conString);
   var query = "UPDATE inconformidade SET situacao = true WHERE id = " + idInc;
-  alert(query);
 
   cliente.connect(function(err){
     cliente.query(query, function(err, result) {
