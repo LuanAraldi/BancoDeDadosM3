@@ -1,5 +1,5 @@
-var pg = require('pg');
-var conString = "postgres://postgres:postgres@localhost:5432/sisgui";
+//var pg = require('pg');
+//var conString = "postgres://postgres:postgres@localhost:5432/sisgui";
 
 function addBanco(tabela, valores){
   var cliente = new pg.Client(conString);

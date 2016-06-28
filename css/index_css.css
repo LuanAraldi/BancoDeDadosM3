@@ -61,6 +61,10 @@ body{
     border: 1px;
 }
 
+.modal-top{
+  top: -30%;
+}
+
 .modal-body input{
     border-radius: 5px;
 }

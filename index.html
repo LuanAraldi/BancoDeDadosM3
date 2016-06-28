@@ -3,6 +3,20 @@
   <head>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/index_css.css">
+
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <script>
+    const pg = require('pg');
+    const conString = "postgres://postgres:postgres@localhost:5432/sisgui";
+  </script>
+  <script src="js/essenciais/jquery-2.2.2.min.js"></script>
+  <script src="js/essenciais/bootstrap.min.js"></script>
+  <script src="js/essenciais/jspdf.min.js"></script>
+  <script src="js/essenciais/jspdf.plugin.autotable.js"></script>
+  <script src="js/populaTabela.js"></script>
+
+  <script>if (window.module) module = window.module;</script>
+
     <meta charset="UTF-8">
 
     <title>Gerenciador de Inconformidades</title>
@@ -21,6 +35,15 @@
 					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-inconformidade">Inconformidades</button></li>
 					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-categoria">Categorias</button></li>
 					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-acao">Ações</button></li>
+        		</ul>
+      		</li>
+
+          <li class="dropdown">
+        		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-remove"></span> Exclusão
+        		<span class="caret"></span></a>
+        		<ul class="dropdown-menu">
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-exclui-inconformidade"
+            onclick="populaTabelaInc()"> Inconformidades</button></li>
         		</ul>
       		</li>
 
@@ -59,6 +82,33 @@
         	</div>
         	<div class="modal-footer">
           		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="adicionaInc()">Salvar</button>
+        	</div>
+      	</div>
+	</div>
+</div>
+
+<div class="modal fade modal-top" id="modal-exclui-inconformidade" role="dialog">
+    <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+        	<div class="modal-header">
+          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+          		<h4 class="modal-title">Exclusão de Inconformidades</h4>
+        		</div>
+              <table class="table table-stripped table-hover" id="tabelaInc">
+                <thead class="thead-inverse">
+                  <tr>
+                    <th>#</th>
+                    <th>Título</th>
+                    <th>Data Abertura</th>
+                    <th>Categoria</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+        	<div class="modal-footer">
+          		<button type="submit" class="btn btn-success" data-dismiss="modal" onclick="excluiInc ()">Salvar</button>
         	</div>
       	</div>
 	</div>
@@ -124,29 +174,18 @@
             <div class="container titulo">
                <div class="jumbotron">
    					<h1>SISGIU</h1><br>
-    					<p>facilitando a ordem e o progresso</p>
   				</div>
 
            	</div>
-
-   <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-   <script src="js/essenciais/jquery-2.2.2.min.js"></script>
-   <script src="js/essenciais/bootstrap.min.js"></script>
-   <script src="js/essenciais/jspdf.min.js"></script>
-   <script src="js/essenciais/jspdf.plugin.autotable.js"></script>
-
-   <script src="js/bd.js"></script>
-   <script src="js/botoesModal.js"></script>
-   <script src="js/index_jss.js"></script>
-   <script src="js/botaoUp.js"></script>
-   <script src="js/centralizaModal.js"></script>
-   <script src="js/populaComboboxCategoria.js"></script>
-   <script src="js/populaComboboxInc.js"></script>
-   <script src="js/reports.js"></script>
-
-   <script>if (window.module) module = window.module;</script>
   </body>
-
+  <script src="js/bd.js"></script>
+  <script src="js/botoesModal.js"></script>
+  <script src="js/index_jss.js"></script>
+  <script src="js/botaoUp.js"></script>
+  <script src="js/centralizaModal.js"></script>
+  <script src="js/populaComboboxCategoria.js"></script>
+  <script src="js/populaComboboxInc.js"></script>
+  <script src="js/reports.js"></script>
   <script>
     require('./renderer.js')
   </script>
