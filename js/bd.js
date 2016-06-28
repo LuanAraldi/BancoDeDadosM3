@@ -85,7 +85,7 @@ function populaComboboxInc(){
         cliente.end();
         for(i = 0; i < result.rows.length; i++){
           var combobox = document.createElement("option");
-          combobox.text = result.rows[i].descricao;
+          combobox.text = result.rows[i].titulo;
           combobox.value = result.rows[i].id;
           combo.add(combobox, null);
         };
@@ -102,9 +102,9 @@ function removeOptions(selectbox)
     }
 };
 
-function finalizaInc(idInc){
+function finalizaInc(idInc, dataFim){
   var cliente = new pg.Client(conString);
-  var query = "UPDATE inconformidade SET situacao = true WHERE id = " + idInc;
+  var query = "UPDATE inconformidade SET situacao = true, data_fechamento = '" + dataFim + "' WHERE id = " + idInc;
 
   cliente.connect(function(err){
     cliente.query(query, function(err, result) {

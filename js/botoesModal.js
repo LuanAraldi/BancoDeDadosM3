@@ -30,6 +30,7 @@ function adicionaAcao(){
 
     if(document.getElementById("opcaoRadio1").checked){
       var acao = document.getElementById("comboAcao").value;
-      finalizaInc(acao);
+      var dataFim = document.getElementById("dataAcao").value;
+      finalizaInc(acao, document.getElementById("dataAcao").value);
     };
 }
