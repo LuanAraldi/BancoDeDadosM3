@@ -35,6 +35,8 @@ function populaComboboxCategoria(){
   var combo = document.getElementById("comboCategoria");
   var cliente = new pg.Client(conString);
 
+  removeOptions(combo);
+
   cliente.connect(function(err){
     if(err){
       alert("Problemas com o banco de dados!");
@@ -65,6 +67,8 @@ function populaComboboxInc(){
   var combo = document.getElementById("comboAcao");
   var cliente = new pg.Client(conString);
 
+  removeOptions(combo);
+
   cliente.connect(function(err){
     if(err){
       alert("Problemas com o banco de dados");
@@ -87,6 +91,15 @@ function populaComboboxInc(){
         };
       });
   });
+};
+
+function removeOptions(selectbox)
+{
+    var i;
+    for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+    {
+        selectbox.remove(i);
+    }
 };
 
 function finalizaInc(idInc){

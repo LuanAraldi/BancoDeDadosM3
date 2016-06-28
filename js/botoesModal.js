@@ -15,6 +15,7 @@ function adicionaInc(){
     valores.push("NULL");
     valores.push(document.getElementById("comboCategoria").value);
     valores.push("false");
+    valores.push(document.getElementById("titInc").value);
     addBanco("inconformidade",valores);
 }
 

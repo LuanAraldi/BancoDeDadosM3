@@ -32,9 +32,11 @@
         		<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-save"></span> Cadastros
         		<span class="caret"></span></a>
         		<ul class="dropdown-menu">
-					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-inconformidade">Inconformidades</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-inconformidade" onclick="populaComboboxCategoria()">
+            Inconformidades</button></li>
 					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-categoria">Categorias</button></li>
-					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-acao">Ações</button></li>
+					<li><button class="btn btn-default btn-block" data-toggle="modal" data-target="#modal-acao" onclick="populaTabelaInc()">
+            Ações</button></li>
         		</ul>
       		</li>
 
@@ -73,6 +75,10 @@
           		<h4 class="modal-title">Cadastro de Inconformidade</h4>
         		</div>
         	<div class="modal-body">
+              <p>Título inconformidade</p>
+              <input type="text" class="form-control" placeholder="Título da Inconformidade" id="titInc">
+              <br>
+              <p>Descrição Inconformidade</p>
            		<textarea class="form-control" id="descInc" rows="6" placeholder="Descrição da inconformidade..."></textarea><br>
            		<p>Categoria da Inconformidade</p>
                 <select  class="form-control" id="comboCategoria">
@@ -173,9 +179,8 @@
 </div>
             <div class="container titulo">
                <div class="jumbotron">
-   					<h1>SISGIU</h1><br>
-  				</div>
-
+   					         <h1>SISGIU</h1><br>
+  				    </div>
            	</div>
   </body>
   <script src="js/bd.js"></script>
